@@ -3,7 +3,6 @@
 
 #include <string>
 using namespace std;
-
 const int INIT_SIZE = 1024;
 
 //位置链表
@@ -28,17 +27,16 @@ typedef struct Table{
 void createSqList(Table &T);
 void expand(Table &T);
 void addSqList(Table &T, string word, unsigned int line, unsigned int offset);
+void addSqList(Table &T, string word);
 void traverse(Table &T);
-void search_unsort(Table &T, string word);
+Node * search_unsort(Table &T, string word);
 int partiction(Node *data, int lo, int hi);
 void quickSort(Node *data, int lo, int hi);
-void sort(Table &T);
-
+void sortTable(Table &T);
 Node * bin_search(Table &T, string word);
 void display_result(Node *node);
-
-
-
-
+void destoryPosition(Position &pos);
+void destorySqList(Table &T);
+void saveIndexFile(Table &T, char *filename);
 
 #endif
