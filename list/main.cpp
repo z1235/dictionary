@@ -54,26 +54,9 @@ void visit(Node *p, char *filename){
 
 //---主函数---
 int main(){
-	int mode = 2;//使用数据结构形式
-	int flag = 1;
 	initList(&word_list);
-	switch(mode){
-	case 1: //单链表形式
-		if(flag){//从索引文件中恢复
-			reback(word_list, f_reback);
-		}
-		else{//没有索引文件
-			build_dictionary(word_list, f_bible);
-			traverse(word_list, f_reback, visit);
-			search_word(word_list, display_search);
-		}
-		break;
-	case 2://静态查找表形式
-		
-		break;
-	default:
-		cout << "没有这种模式" << endl;
-		break;
-	}
+	build_dictionary(word_list, f_bible);
+	traverse(word_list, f_reback, visit);
+	search_word(word_list, display_search);
 	return 0;
 }
