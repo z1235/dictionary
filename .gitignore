@@ -2,3 +2,5 @@
 *.out
 main
 *.o
+*.dat
+bible
